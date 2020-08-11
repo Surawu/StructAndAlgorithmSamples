@@ -8,7 +8,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{2739D8DD-9359-4FC9-ACD9-3ECDCA9DA8CE}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinkedList", "LinkedList\LinkedList.vcxproj", "{01FBAF1C-D5BC-4CE7-92DA-E18CA3CE6AED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +29,14 @@ Global
 		{FFFF4824-2373-4BD7-8130-FF898B2D290E}.Release|x64.Build.0 = Release|x64
 		{FFFF4824-2373-4BD7-8130-FF898B2D290E}.Release|x86.ActiveCfg = Release|Win32
 		{FFFF4824-2373-4BD7-8130-FF898B2D290E}.Release|x86.Build.0 = Release|Win32
+		{01FBAF1C-D5BC-4CE7-92DA-E18CA3CE6AED}.Debug|x64.ActiveCfg = Debug|x64
+		{01FBAF1C-D5BC-4CE7-92DA-E18CA3CE6AED}.Debug|x64.Build.0 = Debug|x64
+		{01FBAF1C-D5BC-4CE7-92DA-E18CA3CE6AED}.Debug|x86.ActiveCfg = Debug|Win32
+		{01FBAF1C-D5BC-4CE7-92DA-E18CA3CE6AED}.Debug|x86.Build.0 = Debug|Win32
+		{01FBAF1C-D5BC-4CE7-92DA-E18CA3CE6AED}.Release|x64.ActiveCfg = Release|x64
+		{01FBAF1C-D5BC-4CE7-92DA-E18CA3CE6AED}.Release|x64.Build.0 = Release|x64
+		{01FBAF1C-D5BC-4CE7-92DA-E18CA3CE6AED}.Release|x86.ActiveCfg = Release|Win32
+		{01FBAF1C-D5BC-4CE7-92DA-E18CA3CE6AED}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

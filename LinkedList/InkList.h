@@ -51,7 +51,8 @@ public:
 
 	void Clear()
 	{
-		head = tail = new Link<T>;
+		head = tail = new Link<T>(nullptr);
+		curLength = 0;
 	}
 
 	int Length()
@@ -116,3 +117,41 @@ public:
 	bool GetPos(int& p, T value);
 };
 
+template<typename T>
+inline bool InkList<T>::GetValue(int p, T& value)
+{
+	if (p >= curLength)
+	{
+		std::cout << "invalid position" << std::endl;
+	}
+
+	Link<int>* node = head->next;
+	for (int i = 0; i < curLength; i++)
+	{
+		if (i == p)
+		{
+			value = node->data;
+			return true;
+		}
+		node = node->next;
+	}
+	return false;
+}
+
+template<typename T>
+inline bool InkList<T>::GetPos(int& p, T value)
+{
+	Link<T>* node = head->next;
+	for (int i = 0; i < curLength; i++)
+	{
+		if (node->data == value)
+		{
+			p = i;
+			return true;
+		}
+
+		node = node->next;
+	}
+
+	return false;
+}

@@ -139,13 +139,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DInkList.cpp" />
     <ClCompile Include="InkList.cpp" />
     <ClCompile Include="Link.cpp" />
-    <ClCompile Include="LinkedList.cpp" />
+    <ClCompile Include="Entry.cpp" />
+    <ClCompile Include="DLink.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DInkList.h" />
     <ClInclude Include="InkList.h" />
     <ClInclude Include="Link.h" />
+    <ClInclude Include="DLink.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

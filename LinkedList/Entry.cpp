@@ -28,6 +28,16 @@ int main()
 		list->Append(4);
 		list->Append(5);
 		list->Append(6);
+
+		list->Insert(0, 1);
+		list->Insert(10, 10);
+
+		list->Delete(0);
+		int v;
+		list->GetValue(2, v);
+
+		int index;
+		list->GetPos(index, 6);
 	}
 	std::cout << "Hello World!\n";
 }

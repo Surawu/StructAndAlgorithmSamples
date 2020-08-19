@@ -3,13 +3,13 @@
 struct LinkExer
 {
 	int data;
-	LinkExer* next;
+	LinkExer* next; // 指向后继结点的指针
 };
 
 struct ListAddress
 {
 	LinkExer* address;
-	ListAddress* qlink;
+	ListAddress* qlink; // 新链表的指针变量
 };
 
 class InkListExer
@@ -21,18 +21,20 @@ public:
 public:
 	ListAddress* Find(int a);
 	bool Append(int value);
-	ListAddress* GetAddress();
+	int LACount();
 
 private:
 	LinkExer* head;
-	LinkExer* tail;
-	ListAddress* la;
+	LinkExer* p; // 原链表的指针变量
+	ListAddress* laHead; // 新链表的头结点
 	int curLength;
+	int laCount;
 };
 
 InkListExer::InkListExer(int size)
 {
-	head = tail = new LinkExer();
+	head = p = new LinkExer();
+	laHead = new ListAddress();
 }
 
 InkListExer::~InkListExer()
@@ -45,20 +47,23 @@ inline ListAddress* InkListExer::Find(int a)
 	{
 		return nullptr;
 	}
-	LinkExer* node = head;
-	while (node != nullptr)
+	ListAddress* q = laHead; // q 为新链表的指针变量
+	p = head; // 指向头指针
+	while (p != nullptr)
 	{
-		if (node->data == a)
+		if (p->data == a)
 		{
-			la->qlink = new ListAddress();
-			la->address = node;
-			la = la->qlink;
-			la->qlink = nullptr;
+			ListAddress* laNode = new ListAddress();
+			laNode->address = p;
+			laNode->qlink = nullptr;
+			q->qlink = laNode;
+			q = q->qlink;
+			laCount++;
 		}
-		node = node->next;
+		p = p->next;
 	}
 
-	return la;
+	return laHead;
 }
 
 inline bool InkListExer::Append(int value)
@@ -66,14 +71,14 @@ inline bool InkListExer::Append(int value)
 	LinkExer* node = new LinkExer();
 	node->data = value;
 	node->next = nullptr;
-	tail->next = node;
-	tail = node;
+	p->next = node;
+	p = node;
 
 	curLength++;
 	return true;
 }
 
-inline ListAddress* InkListExer::GetAddress()
+inline int InkListExer::LACount()
 {
-	return la;
+	return laCount;
 }

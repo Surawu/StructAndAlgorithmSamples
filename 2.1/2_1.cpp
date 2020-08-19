@@ -15,8 +15,8 @@ int main()
 	list->Append(1);
 	list->Append(1);
 
-	ListAddress* la = list->Find(1);
-
+	list->Find(1);
+	std::cout << list->LACount() << std::endl;
 	std::cout << "Hello World!\n";
 }
 
